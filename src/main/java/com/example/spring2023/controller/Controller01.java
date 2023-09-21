@@ -24,5 +24,9 @@ public class Controller01 {
         System.out.println("Controller01.method3");
     }
 
+    @RequestMapping("path5") //  "/" 생략 가능 , 웹에 칠때는 / 붙여야 한다
+    public void method4(){
+        System.out.println("Controller01.method4");
+    }
 
 }
