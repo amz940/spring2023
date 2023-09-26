@@ -2,6 +2,7 @@ package com.example.spring2023.controller;
 
 import com.example.spring2023.domain.MyDto11;
 import com.example.spring2023.domain.MyDto12;
+import com.example.spring2023.domain.MyDto13;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +16,9 @@ import java.util.List;
 @RequestMapping("main13")
 public class Controller13 {
     // 배열로 묶어서 지정가능
-    @RequestMapping({"sub1","sub2","sub4","sub7","sub9"})
+    @RequestMapping({"sub1",
+            "sub2",
+            "sub4","sub7","sub9","sub11","sub13"})
     public void method1(){
 
     }
@@ -88,6 +91,20 @@ public class Controller13 {
     ){
         System.out.println("title = " + title);
         System.out.println("contentBody = " + contentBody);
+    }
+
+    @RequestMapping("sub12")
+    public void method12(MyDto13 vo){
+        System.out.println("vo = " + vo);
+    }
+
+    @RequestMapping("sub14")
+    public void method14(
+             @RequestParam("hobby") String hobby,
+             @RequestParam("food") List<String> food
+    ){
+        System.out.println("hobby = " + hobby);
+        System.out.println("food = " + food);
     }
 
 }
