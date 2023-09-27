@@ -16,7 +16,7 @@
 <form action="/main13/sub14">
 <%--    select>option[value]*3--%>
     <div>
-        <select name="hobby" id="input2">
+        <select name="hobby">
             <option value="soccer">축구</option>
             <option value="baseball">야구</option>
             <option value="basketball">농구</option>
@@ -25,13 +25,12 @@
     <div>
 <%--        select[name=food][multiple]>option[value]*5--%>
 <%--        multiple에 값이 없어도 상관없다--%>
-        <select name="food" id="input1" multiple="">
+        <select name="food" multiple="">
             <option value="pizza">피자</option>
             <option value="coffee">커피</option>
             <option value="burger">버거</option>
             <option value="milk">우유</option>
-            <option value="chichen">치킨
-            </option>
+            <option value="chichen">치킨</option>
         </select>
     </div>
     <button>전송</button>
