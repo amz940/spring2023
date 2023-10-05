@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class MyDto16 {
-    private String id;
+    private Integer id;
     private String name;
     private String unit;
-    private Integer price;
+    private Double price;
 }
