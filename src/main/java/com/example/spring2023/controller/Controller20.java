@@ -1,5 +1,6 @@
 package com.example.spring2023.controller;
 
+import com.example.spring2023.domain.MyDto00;
 import com.example.spring2023.domain.MyDto15;
 import com.example.spring2023.domain.MyDto16;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -281,11 +282,11 @@ public class Controller20 {
     @GetMapping("sub11")
     public void method(@RequestParam("country") List<String> countryList ) throws SQLException {
         String questionMark = "";
-        for (int i =0; i < countryList.size(); i++){
+        for (int i = 0; i < countryList.size(); i++){
             questionMark += "?";
-
+            // 마지막엔 , 가 붙으면 안되서 -1
             if(i < countryList.size() -1){
-                questionMark = ",";
+                questionMark += ",";
             }
         }
         String sql = """
@@ -294,23 +295,27 @@ public class Controller20 {
                 +
                 questionMark
                 +
-                """
-                )
-                """;
+
+                ")";
+        System.out.println(sql);
         Connection connection = dataSource.getConnection();
         PreparedStatement statement = connection.prepareStatement(sql);
 
-        for (int i = 0; i < countryList.size()-1; i++){
+        for (int i = 0; i < countryList.size(); i++){
+            // i가 0 부터 시작하므로 +1를 붙인다, ? 는 1부터 시작한다
+            // 0번 인덱스를 첫번째 ? 에 붙인다
             statement.setString(i+1, countryList.get(i));
         }
 
         ResultSet resultSet = statement.executeQuery();
-
+        List<MyDto00> list = new ArrayList<>();
         try(connection; statement; resultSet;){
             while (resultSet.next()){
-                String name = resultSet.getString(2);
-                String country = resultSet.getString(7);
-                System.out.println( name + ":" + country);
+                MyDto00 dto = new MyDto00();
+                dto.setName(resultSet.getString(1));
+                dto.setCountry(resultSet.getString(2));
+
+                list.add(dto);
             }
         }
 
