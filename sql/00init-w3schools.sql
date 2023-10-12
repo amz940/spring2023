@@ -2,6 +2,7 @@
 CREATE DATABASE IF NOT EXISTS w3schools;
 USE w3schools;
 
+
 DROP TABLE IF EXISTS Customers;
 CREATE TABLE `Customers` ( `CustomerID` int(11) NOT NULL AUTO_INCREMENT, `CustomerName` varchar(255) CHARACTER SET utf8 DEFAULT NULL, `ContactName` varchar(255) CHARACTER SET utf8 DEFAULT NULL, `Address` varchar(255) CHARACTER SET utf8 DEFAULT NULL, `City` varchar(255) CHARACTER SET utf8 DEFAULT NULL, `PostalCode` varchar(255) CHARACTER SET utf8 DEFAULT NULL, `Country` varchar(255) CHARACTER SET utf8 DEFAULT NULL, PRIMARY KEY (`CustomerID`) ) ;
 INSERT INTO Customers (`CustomerID`,`CustomerName`,`ContactName`,`Address`,`City`,`PostalCode`,`Country`) VALUES
