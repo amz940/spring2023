@@ -18,7 +18,7 @@ public class MyApp13 {
 @Component
 class MyClass26{
 
-    @PostConstruct // DI 완료 후 바로 실행
+//    @PostConstruct // DI 완료 후 반드시 출력 되는 코드
     public void method1(){
         System.out.println("MyClass26.method1");
     }
