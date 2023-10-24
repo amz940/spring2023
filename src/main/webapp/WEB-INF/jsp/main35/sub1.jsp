@@ -233,7 +233,20 @@
     </div>
 </div>
 
+<div>
+    <div>
+        <button onclick="ajax13()">버튼 13</button>
+        <script>
+            function ajax13(){
+                axios.request({
+                    url : "/main35/sub11"
+                    // method : "get" 생략 가능
+                });
+            }
+        </script>
 
+    </div>
+</div>
 
 
 </body>
