@@ -49,12 +49,12 @@ public interface MyDao7 {
     int deleteByCustomerId(Integer cid);
 
     @Update("""
-UPDATE products
-SET price = #{price},
-    CategoryID = #{category},
-    productName = #{name}
-WHERE ProductID = #{id}
-""")
+            UPDATE products
+            SET price = #{price},
+                CategoryID = #{category},
+                productName = #{name}
+            WHERE ProductID = #{id}
+            """)
     int updateProduct(MyDto40 dto);
 
     @Update("""
